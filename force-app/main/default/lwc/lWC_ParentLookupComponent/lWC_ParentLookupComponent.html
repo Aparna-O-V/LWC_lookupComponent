@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Account List with Cases">
+        <c-l-w-c-_childlookupcomponent label="Parent Account" selected-icon-name="standard:account" object-label="Account"
+            object-api-name="Account" field-api-name="Name"
+            onlookupupdate={handleValueSelectedOnAccount}>
+        </c-l-w-c-_childlookupcomponent>
+            <template if:true={accountsData}>
+                <div class="slds-m-around_medium">
+                    <lightning-datatable
+                        key-field="id"
+                        data={accountsData}
+                        columns={columns}>
+                    </lightning-datatable>
+                </div>
+            </template>
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,26 @@
+<!-- AccountListWithCases.html -->
+<template>
+    <lightning-card title="Account List with Cases">
+        <div class="slds-m-around_medium">
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id} class="slds-grid">
+                    <div class="slds-col">
+                        <lightning-input type="radio" name="accountRadio" label={account.Name} value={account.Id}  onchange={handleRadioChange}></lightning-input>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-button label="Show Related Case Records" variant="brand" onclick={handleShowCases}></lightning-button>
+        </div>
+        <template if:true={relatedCases}>
+            <div class="slds-m-around_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={relatedCases}
+                    columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+</template>
