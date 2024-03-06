@@ -3,7 +3,7 @@ public with sharing class LWC_lookupController {
     public static List<ResultWrapper> fetchRecords(SearchWrapper inputWrapper) {
         try {
             if(inputWrapper != null){
-
+//test
                 Integer customLimit = Integer.valueOf(Label.LWC_lookupComponentLimit);                
 
                 String fieldsToQuery = 'SELECT Id, ';
